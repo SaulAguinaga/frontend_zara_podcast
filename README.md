@@ -1,3 +1,15 @@
+Esta prueba consiste en la creación de una mini-aplicación para escuchar
+podcasts musicales.
+La aplicación tendrá únicamente tres vistas:
+1. Vista principal
+2. Detalles de un podcast
+3. Detalles de un capítulo de un podcast
+El diseño de las vistas se debe ceñir al mostrado junto a la descripción del detalle de
+las mismas (más abajo).
+La aplicación será una Single Page Application de manera que la navegación se realizará
+siempre en cliente, sin refrescar completamente el documento principal en ningún
+momento.
+
 # frontend_zara_podcast
 
 This template should help get you started developing with Vue 3 in Vite.
