@@ -10,26 +10,30 @@ const props = defineProps({
 
 <template>
     <div class="bodyPodcast">
-        <h2>Podcaster</h2>
-        <hr>
-       
-        {{ props.details.podcastDetails[0] }}
-        <!-- <Search></Search>
-        <div class="container">
-                <div class="elementPodcast" v-for="podcast in podcast">
-                    <img v-bind:srcset='`${podcast["im:image"][1].label}`'>
-                    <div class="podcastBox">
-                        {{ podcast["id"].attributes["im:id"]}}
-                        <b>{{ podcast["im:name"].label }}</b>
-                        <br>
-                        {{ podcast["im:artist"].label }}
-                    </div>
-
-                    {{ details }}
-                </div>
-        </div> -->
+        <RouterLink to="/"  class="button"><h1>Podcaster</h1></RouterLink>
+        <hr>       
+        <!-- {{ props.details.podcastDetails.attributes["im:name"] }} -->
+        {{ details['trackname'].label}}
+        
     </div>
     </template>
 
+<style>
+h1{
+    display: flex;
+    color: #2B79BC;
+    align-items: left;
+    
+}
+.button{
+    text-decoration: none;
+}
 
-<!-- https://itunes.apple.com/lookup?id={{ podcast["id"].attributes["im:id"]}} -->
+hr{
+    height: fit-content;
+    width: 100%;
+    border: none;
+    height: 0.1vw;
+    background-color: #dbdbdb;
+}
+</style>

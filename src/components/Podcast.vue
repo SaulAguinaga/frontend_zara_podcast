@@ -3,7 +3,6 @@ import { ref } from "vue";
 import { RouterLink } from "vue-router";
 
 let input = ref("");
-let url;
     const props = defineProps({
         podcast: {
             type: Object,
@@ -34,12 +33,13 @@ let url;
     <div class="container">            
             <div class="elementPodcast" v-for="podcast in filteredList()" :key="podcast">
                 
-                <RouterLink to='/podcast/${podcast.id.attributes["im:id"]}'  class="button">
+                <RouterLink :to="{name: 'details', params: { id: podcast['id'].attributes['im:id']}}"  class="button">
                 <img v-bind:srcset='`${podcast["im:image"][1].label}`'>
                 <div class="podcastBox">
                     {{podcast["id"].attributes["im:id"]}}
                     <h2>{{ podcast["im:name"].label }}</h2>
                     <h3>Author:{{ podcast["im:artist"].label }}</h3>
+                    {{ podcast}}
                 </div>
                 </RouterLink>
                 

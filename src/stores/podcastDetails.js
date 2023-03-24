@@ -8,13 +8,11 @@ export const usePodcastDetails = defineStore({
         podcastDetails: []
     }),
     actions: {
-        async fetchPodcastDetails () {
-            await fetch('https://api.allorigins.win/get?url=https://itunes.apple.com/lookup?id=1658497449')
+        async fetchPodcastDetails (idDetails) {
+            await fetch("https://api.allorigins.win/get?url=https://itunes.apple.com/lookup?id=" + idDetails)
             .then(res => res.json())
-            .then(data => {
-               
+            .then(data => {               
                 details = data.contents
-                // console.log(details);
                 this.podcastDetails.push(details)
             })
         }

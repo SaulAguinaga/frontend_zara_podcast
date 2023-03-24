@@ -10,10 +10,10 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/podcast/:id',
-      name: 'podcast',
-      component: () => import('../views/PodcastDetails.vue')
-      
+      path: '/podcast/:id/details',
+      name: 'details',
+      component: () => import('../views/PodcastDetails.vue'),
+      props: route => ({ id: parseInt(route.params.id) })
     },
     {
       path: '/episode',
